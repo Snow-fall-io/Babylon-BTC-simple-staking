@@ -18,52 +18,32 @@ import { Logo } from "../Logo/Logo";
 const iconLinks = [
   {
     name: "Website",
-    url: "https://babylonlabs.io",
+    url: "https://www.snow-fall.io",
     Icon: GoHome,
   },
   {
     name: "X",
-    url: "https://x.com/babylonlabs_io",
+    url: "https://x.com/Snow_FalI",
     Icon: FaXTwitter,
   },
   {
     name: "GitHub",
-    url: "https://github.com/babylonlabs-io",
+    url: "https://github.com/snow-fall-io/",
     Icon: BsGithub,
   },
   {
-    name: "Telegram",
-    url: "https://t.me/babyloncommunity",
-    Icon: BsTelegram,
-  },
-  {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/company/babylon-labs-official",
+    url: "https://www.linkedin.com/company/snow-fall-io/",
     Icon: BsLinkedin,
   },
   {
-    name: "Medium",
-    url: "https://medium.com/babylonlabs-io",
-    Icon: BsMedium,
-  },
-  {
-    name: "Docs",
-    url: "https://docs.babylonlabs.io/",
-    Icon: IoMdBook,
-  },
-  {
-    name: "Forum",
-    url: "https://forum.babylonlabs.io/",
-    Icon: MdForum,
-  },
-  {
     name: "Email",
-    url: "mailto:contact@babylonlabs.io",
+    url: "mailto:contact@snow-fall.io",
     Icon: MdAlternateEmail,
   },
   {
     name: "Discord",
-    url: "https://discord.com/invite/babylonglobal",
+    url: "https://discord.gg/rWTQFPYVVX",
     Icon: BsDiscord,
   },
 ];
@@ -91,19 +71,28 @@ export const Footer: React.FC = () => {
 
           <Text variant="body2" className="text-center md:text-left">
             <a
-              href="https://babylonlabs.io/terms-of-use"
+              href="https://stake.snow-fall.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-secondary-main"
+              className="transition-colors hover:text-primary"
             >
-              Terms of Use
+              Staking dashboard
             </a>{" "}
             -{" "}
             <a
-              href="https://babylonlabs.io/privacy-policy"
+              href="https://www.snow-fall.io/terms-and-conditions/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-secondary-main"
+              className="transition-colors hover:text-primary"
+            >
+              Terms & Conditions
+            </a>{" "}
+            -{" "}
+            <a
+              href="https://www.snow-fall.io/politique-de-confidentialite/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-primary"
             >
               Privacy Policy
             </a>{" "}
