@@ -24,6 +24,7 @@ const enableSentryPlugin =
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/btc/babylon/",
   build: {
     outDir: "out",
     sourcemap: true,
