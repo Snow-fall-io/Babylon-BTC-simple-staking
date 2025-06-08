@@ -8,6 +8,46 @@ export interface Question {
 export const questions = (coinName: string): Question[] => {
   const questionList = [
     {
+      title: "What is the Dashboard?",
+      content: (
+        <>
+          <p>
+            The dashboard is based on the official for Snow Fall FP{" "}
+            <a
+              href="https://btcstaking.babylonlabs.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#ff7c2a" }}
+            >
+              Babylon Dashboard
+            </a>
+            . It allows you to easily stake your BTC with our finality provider.
+          </p>
+          <p>
+            You can find the{" "}
+            <a
+              href="https://babylonlabs.io/terms-of-use"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#ff7c2a" }}
+            >
+              Terms of Use
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://babylonlabs.io/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#ff7c2a" }}
+            >
+              Privacy Policy
+            </a>{" "}
+            of Babylon here.
+          </p>
+        </>
+      ),
+    },
+    {
       title: "What is Babylon?",
       content: (
         <p>
