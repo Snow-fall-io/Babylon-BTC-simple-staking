@@ -1,11 +1,11 @@
 import { useWalletConnect } from "@babylonlabs-io/wallet-connector";
-
 import { Container } from "@/app/components/Container/Container";
 import { useAppState } from "@/app/state";
-
-import snowfallLogo from "@/app/assets/SnowFall-logo-w.png";
 import { SmallLogo } from "../Logo/SmallLogo";
 import { Connect } from "../Wallet/Connect";
+
+// Remplace Image de next/image par <img>
+import snowfallLogo from "@/app/assets/SnowFall-logo-w.png";
 
 export const Header = () => {
   const { open } = useWalletConnect();
@@ -16,7 +16,7 @@ export const Header = () => {
       <Container className="h-20 flex items-center justify-between">
         {/* Logos alignés proprement */}
         <div className="flex items-center gap-2">
-          <Image
+          <img
             src={snowfallLogo}
             alt="Snow Fall"
             width={40}
