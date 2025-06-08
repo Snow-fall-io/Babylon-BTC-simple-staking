@@ -6,7 +6,7 @@ import {
 } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { GoHome } from "react-icons/go";
-import { MdAlternateEmail, MdForum } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 
 import { Container } from "@/app/components/Container/Container";
 

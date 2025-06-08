@@ -76,6 +76,7 @@ const defaultState: FinalityProviderState = {
     status: DEFAULT_FILTER_VALUE,
   },
   finalityProviders: [],
+  allFinalityProviders: [], // 👈 Ajoute cette ligne
   hasNextPage: false,
   isFetching: false,
   hasError: false,
@@ -203,6 +204,7 @@ export function FinalityProviderState({ children }: PropsWithChildren) {
     () => ({
       filter,
       finalityProviders: filteredFinalityProviders,
+      allFinalityProviders: finalityProviders,
       isFetching,
       hasError: isError,
       hasNextPage,

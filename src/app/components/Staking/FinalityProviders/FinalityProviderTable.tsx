@@ -14,6 +14,7 @@ import { FinalityProviderState as FinalityProviderStateEnum } from "@/app/types/
 
 import { finalityProviderColumns } from "./FinalityProviderColumns";
 import { StatusView } from "./FinalityProviderTableStatusView";
+import { FinalityProvider } from "@/app/types/finalityProviders";
 
 interface FinalityProviderTable {
   onSelectRow?: (fpPK: string) => void;
