@@ -4,17 +4,15 @@
 import "core-js/features/array/to-sorted";
 
 import { Loader, Table, useWatch } from "@babylonlabs-io/core-ui";
-import Image from "next/image";
 import { useMemo, useState } from "react";
 
 import warningOctagon from "@/app/assets/warning-octagon.svg";
 import warningTriangle from "@/app/assets/warning-triangle.svg";
 import { useFinalityProviderState } from "@/app/state/FinalityProviderState";
-import { FinalityProviderState as FinalityProviderStateEnum } from "@/app/types/finalityProviders";
+import { FinalityProviderState as FinalityProviderStateEnum, FinalityProvider } from "@/app/types/finalityProviders";
 
 import { finalityProviderColumns } from "./FinalityProviderColumns";
 import { StatusView } from "./FinalityProviderTableStatusView";
-import { FinalityProvider } from "@/app/types/finalityProviders";
 
 interface FinalityProviderTable {
   onSelectRow?: (fpPK: string) => void;
@@ -61,7 +59,7 @@ export const FinalityProviderTable = ({ onSelectRow }: FinalityProviderTable) =>
 
   const errorView = (
     <StatusView
-      icon={<Image src={warningTriangle} alt="Warning" width={88} height={88} />}
+      icon={<img src={warningTriangle} alt="Warning" width={88} height={88} />}
       title="Failed to Load"
       description={
         <>
@@ -81,7 +79,7 @@ export const FinalityProviderTable = ({ onSelectRow }: FinalityProviderTable) =>
 
   const noMatchesView = (
     <StatusView
-      icon={<Image src={warningOctagon} alt="Warning" width={160} height={160} />}
+      icon={<img src={warningOctagon} alt="Warning" width={160} height={160} />}
       title="No Matches Found"
     />
   );
@@ -128,27 +126,28 @@ export const FinalityProviderTable = ({ onSelectRow }: FinalityProviderTable) =>
 
       {/* Autres validateurs */}
       {showOthers && (
-        <Table
-          wrapperClassName="max-h-[28.5rem]"
-          className="min-w-full"
-          data={otherProviders}
-          columns={finalityProviderColumns}
-          loading={isFetching}
-          hasMore={hasNextPage}
-          onLoadMore={fetchNextPage}
-          selectedRow={selectedFP}
-          onRowSelect={(row) => {
-            onSelectRow?.(row?.btcPk ?? "");
-          }}
-          isRowSelectable={isRowSelectable}
-        />
-      )}
-
-      {/* Fallback visuel si aucun autre FP */}
-      {showOthers && otherProviders.length === 0 && (
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400 italic">
-          No finality providers match the current filter.
-        </div>
+        <>
+          {otherProviders.length > 0 ? (
+            <Table
+              wrapperClassName="max-h-[28.5rem]"
+              className="min-w-full"
+              data={otherProviders}
+              columns={finalityProviderColumns}
+              loading={isFetching}
+              hasMore={hasNextPage}
+              onLoadMore={fetchNextPage}
+              selectedRow={selectedFP}
+              onRowSelect={(row) => {
+                onSelectRow?.(row?.btcPk ?? "");
+              }}
+              isRowSelectable={isRowSelectable}
+            />
+          ) : (
+            <div className="text-center text-sm text-gray-500 dark:text-gray-400 italic">
+              No finality providers match the current filter.
+            </div>
+          )}
+        </>
       )}
     </div>
   );
