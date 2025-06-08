@@ -26,6 +26,7 @@ interface FinalityProviderState {
   filter: FilterState;
   finalityProviders: FinalityProvider[];
   finalityProviderMap: Map<string, FinalityProvider>;
+  allFinalityProviders: FinalityProvider[];
   hasNextPage: boolean;
   isFetching: boolean;
   hasError: boolean;

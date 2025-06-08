@@ -38,10 +38,10 @@ export const FinalityProviderTable = ({ onSelectRow }: FinalityProviderTable) =>
     if (!allFinalityProviders) return { snowFallProvider: [], otherProviders: [] };
 
     const snowFall = allFinalityProviders.find(
-      (fp) => fp.description?.moniker === "Snow Fall"
+      (fp: FinalityProvider) => fp.description?.moniker === "Snow Fall"
     );
 
-    const others = allFinalityProviders.filter((fp) => {
+    const others = allFinalityProviders.filter((fp: FinalityProvider) => {
       const isSnowFall = fp.description?.moniker === "Snow Fall";
       if (isSnowFall) return false;
 
